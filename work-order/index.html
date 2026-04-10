@@ -1,76 +1,746 @@
-Upkeep Property Maintenance
-Professional Property Maintenance, One Request Away.
-Submit a Work Order
-👤
-Requestor Information
-Your Name *
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit a Work Order — Upkeep Property Maintenance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;
+  --navy-light:#1E3148;
+  --navy-dark:#091420;
+  --navy-mid:#162436;
+  --blue:#1A6FBF;
+  --blue-bright:#2389E8;
+  --blue-light:#5AAFF0;
+  --blue-dim:rgba(26,111,191,0.15);
+  --white:#FFFFFF;
+  --off-white:#0D1B2A;
+  --gray-100:rgba(255,255,255,0.06);
+  --gray-200:rgba(255,255,255,0.1);
+  --gray-300:#64748B;
+  --gray-400:#94A3B8;
+  --gray-500:#CBD5E1;
+  --red:#E53E3E;
+  --red-bg:rgba(229,62,62,0.1);
+  --green:#1D9E75;
+  --green-bg:rgba(29,158,117,0.1);
+  --radius:8px;
+  --radius-lg:12px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.25);
+  --shadow-lg:0 8px 32px rgba(0,0,0,0.3);
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  line-height:1.6;
+  min-height:100vh;
+}
 
-Company / Management Co.
+/* ── HEADER ── */
+.site-header{
+  background:var(--navy);
+  padding:2rem 1.5rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:'';
+  position:absolute;
+  top:-40%;left:-10%;
+  width:120%;height:180%;
+  background:radial-gradient(ellipse at 30% 50%,rgba(26,111,191,0.12) 0%,transparent 60%),
+             radial-gradient(ellipse at 70% 20%,rgba(255,255,255,0.03) 0%,transparent 50%);
+  pointer-events:none;
+}
+.header-content{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.company-name{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.6rem,4.5vw,2.4rem);
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:0.01em;
+  margin-bottom:0.25rem;
+}
+.company-name span{color:var(--blue-light)}
+.tagline{
+  color:var(--gray-300);
+  font-size:0.95rem;
+  font-weight:400;
+  letter-spacing:0.02em;
+}
+.page-title{
+  color:var(--blue-light);
+  font-size:1.05rem;
+  font-weight:600;
+  margin-top:1.25rem;
+  padding-top:1.25rem;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
 
-Email *
+/* ── FORM CONTAINER ── */
+.form-wrap{
+  max-width:720px;
+  margin:0 auto;
+  padding:1.5rem 1rem 4rem;
+}
 
-Phone *
+/* ── SECTIONS ── */
+.form-section{
+  background:var(--navy-mid);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+  padding:1.75rem 1.5rem;
+  margin-bottom:1.25rem;
+  border:1px solid rgba(255,255,255,0.06);
+  transition:box-shadow 0.2s;
+}
+.form-section:hover{box-shadow:var(--shadow-md);border-color:rgba(255,255,255,0.1)}
+.section-header{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  margin-bottom:1.25rem;
+  padding-bottom:0.75rem;
+  border-bottom:2px solid var(--blue-dim);
+}
+.section-icon{
+  width:36px;height:36px;
+  background:var(--blue-dim);
+  border-radius:var(--radius);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  font-size:1.1rem;
+}
+.section-title{
+  font-family:'Fraunces',serif;
+  font-size:1.15rem;
+  font-weight:600;
+  color:var(--white);
+}
+.section-subtitle{
+  font-size:0.8rem;
+  color:var(--gray-400);
+  font-weight:400;
+  display:block;
+}
 
-🏠
-Property Information
-Street Address *
+/* ── FORM FIELDS ── */
+.field-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+  margin-bottom:1rem;
+}
+.field-row.two-col{grid-template-columns:1fr 1fr}
+.field-row.three-col{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:580px){
+  .field-row.two-col,.field-row.three-col{grid-template-columns:1fr}
+}
 
-City *
+.field{display:flex;flex-direction:column;gap:0.3rem}
+.field label{
+  font-size:0.82rem;
+  font-weight:600;
+  color:var(--gray-400);
+  letter-spacing:0.02em;
+}
+.field label .req{color:var(--red);margin-left:2px}
+.field label .opt{color:var(--gray-400);font-weight:400;font-size:0.78rem}
 
-State *
-TN
-ZIP *
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="number"],
+.field input[type="date"],
+.field input[type="time"],
+.field select,
+.field textarea{
+  width:100%;
+  padding:0.65rem 0.85rem;
+  border:1.5px solid rgba(255,255,255,0.1);
+  border-radius:var(--radius);
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:0.92rem;
+  color:var(--white);
+  background:rgba(255,255,255,0.05);
+  transition:border-color 0.2s,box-shadow 0.2s;
+  outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px var(--blue-dim);
+}
+.field textarea{resize:vertical;min-height:110px}
+.field select{cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2394A3B8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 0.85rem center;padding-right:2.2rem;
+}
 
-Unit Number (if applicable)
+/* Validation states */
+.field.invalid input,.field.invalid select,.field.invalid textarea{
+  border-color:var(--red);
+  background:var(--red-bg);
+}
+.field .error-msg{
+  font-size:0.76rem;
+  color:var(--red);
+  display:none;
+  margin-top:1px;
+}
+.field.invalid .error-msg{display:block}
 
-Property Type *
-            Select type…
-            Single-Family
-            Multi-Family
-            Townhome
-            Condo
-            Other
-          
-🔑
-Tenant Information
-Optional — helps us coordinate access
-Tenant Name
+/* ── RADIO / CHECKBOX GROUPS ── */
+.radio-group,.checkbox-group{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.15rem}
+.radio-group label,.checkbox-group label{
+  display:flex;align-items:center;gap:0.4rem;
+  padding:0.5rem 0.9rem;
+  border:1.5px solid rgba(255,255,255,0.1);
+  border-radius:var(--radius);
+  cursor:pointer;
+  font-size:0.85rem;
+  font-weight:500;
+  transition:all 0.15s;
+  background:rgba(255,255,255,0.03);
+}
+.radio-group label:hover,.checkbox-group label:hover{border-color:var(--blue);background:var(--blue-dim)}
+.radio-group input:checked+span,.checkbox-group input:checked+span{color:var(--navy)}
+.radio-group label:has(input:checked),.checkbox-group label:has(input:checked){
+  border-color:var(--gold);background:var(--blue-dim);
+}
+.radio-group input,.checkbox-group input{accent-color:var(--blue)}
 
-Tenant Phone
+/* ── FILE UPLOAD ── */
+.upload-area{
+  border:2px dashed rgba(255,255,255,0.12);
+  border-radius:var(--radius);
+  padding:1.5rem;
+  text-align:center;
+  cursor:pointer;
+  transition:all 0.2s;
+  background:rgba(255,255,255,0.03);
+}
+.upload-area:hover,.upload-area.dragover{
+  border-color:var(--gold);
+  background:var(--blue-dim);
+}
+.upload-area .upload-icon{font-size:1.8rem;margin-bottom:0.4rem}
+.upload-area p{font-size:0.85rem;color:var(--gray-400)}
+.upload-area p strong{color:var(--white)}
+.upload-area .upload-hint{font-size:0.75rem;color:var(--gray-400);margin-top:0.25rem}
+.upload-previews{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.75rem}
+.upload-preview{
+  position:relative;
+  width:72px;height:72px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1.5px solid var(--gray-200);
+}
+.upload-preview img{width:100%;height:100%;object-fit:cover}
+.upload-preview .remove-btn{
+  position:absolute;top:2px;right:2px;
+  width:20px;height:20px;
+  background:rgba(27,42,74,0.75);
+  color:var(--white);
+  border:none;border-radius:50%;
+  font-size:0.7rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  line-height:1;
+}
 
-Permission to contact tenant directly?
+/* ── SMS CONSENT ── */
+.consent-row{
+  display:flex;align-items:flex-start;gap:0.6rem;
+}
+.consent-row input[type="checkbox"]{
+  margin-top:3px;flex-shrink:0;accent-color:var(--blue);
+  width:18px;height:18px;cursor:pointer;
+}
+.consent-row label{
+  font-size:0.82rem;line-height:1.6;color:var(--gray-400);cursor:pointer;
+}
+.consent-row label a{
+  color:var(--blue-light);text-decoration:underline;font-weight:600;
+}
+.consent-row label a:hover{color:var(--blue-bright)}
 
-Yes
+/* ── SUBMIT BUTTON ── */
+.submit-wrap{text-align:center;margin-top:1.5rem}
+.btn-submit{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.9rem 2.5rem;
+  background:var(--blue);
+  color:var(--white);
+  border:none;border-radius:var(--radius);
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:0.02em;
+  cursor:pointer;
+  transition:all 0.2s;
+  box-shadow:0 2px 8px rgba(26,111,191,0.3);
+}
+.btn-submit:hover{
+  background:var(--blue-bright);
+  box-shadow:0 4px 16px rgba(26,111,191,0.35);
+  transform:translateY(-1px);
+}
+.btn-submit:active{transform:translateY(0)}
+.btn-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
 
-No
-🔧
-Work Order Details
-Category of Work *
-            Select category…
-            General Maintenance
-            Plumbing
-            Electrical
-            HVAC
-            Appliance Repair
-            Landscaping / Exterior
-            Make Ready / Turnover
-            Emergency Repair
-            Other
-          
-Urgency Level *
-            Select urgency…
-            Emergency (24hr response)
-            Urgent (48hr response)
-            Routine (scheduled)
-            Flexible
-          
-Description of Issue *
-Photos (up to 5 images)
-📷
-Tap to upload or drag photos here
-JPG, PNG, HEIC — max 10 MB each
+/* ── CONFIRMATION ── */
+.confirmation{
+  display:none;
+  max-width:720px;
+  margin:0 auto;
+  padding:2rem 1rem 4rem;
+}
+.confirmation.active{display:block}
+.confirm-card{
+  background:var(--navy-mid);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);
+  padding:2.5rem 2rem;
+  text-align:center;
+  border:2px solid var(--green);
+  animation:slideUp 0.4s ease;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.confirm-icon{font-size:3rem;margin-bottom:0.75rem}
+.confirm-card h2{
+  font-family:'Fraunces',serif;
+  font-size:1.5rem;color:var(--white);
+  margin-bottom:0.4rem;
+}
+.confirm-card .confirm-note{
+  color:var(--green);font-weight:600;font-size:0.95rem;margin-bottom:1.5rem;
+}
+.confirm-summary{
+  text-align:left;
+  background:rgba(255,255,255,0.04);
+  border-radius:var(--radius);
+  padding:1.25rem 1.5rem;
+  margin:1.25rem 0;
+  font-size:0.88rem;
+}
+.confirm-summary dt{font-weight:600;color:var(--blue-light);font-size:0.78rem;letter-spacing:0.04em;text-transform:uppercase;margin-top:0.75rem}
+.confirm-summary dt:first-child{margin-top:0}
+.confirm-summary dd{color:var(--gray-500);margin:0.15rem 0 0}
+.confirm-footer{font-size:0.85rem;color:var(--gray-400);margin-top:1.25rem;line-height:1.6}
+.btn-another{
+  display:inline-block;margin-top:1rem;
+  padding:0.6rem 1.6rem;
+  background:var(--blue);color:var(--white);
+  border:none;border-radius:var(--radius);
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:0.9rem;font-weight:600;cursor:pointer;
+  transition:background 0.2s;
+}
+.btn-another:hover{background:var(--blue-bright)}
 
-By checking this box, I consent to receive marketing and promotional text messages from UpKeep Property Maintenance at the phone number I have provided above. Message and data rates may apply. Message frequency varies. Reply HELP for help and STOP to stop. I consent to the Terms of Service and Privacy Policy.
-Submit Work Order
+/* ── FOOTER ── */
+.site-footer{
+  text-align:center;
+  padding:1.5rem 1rem;
+  font-size:0.78rem;
+  color:var(--gray-300);
+}
 
-© 2026 Upkeep Property Maintenance · 130 Wilson Pike Circle, Brentwood, TN 37027
+/* ── FORM HIDDEN STATE ── */
+.form-wrap.hidden{display:none}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header class="site-header">
+  <div class="header-content">
+    <h1 class="company-name">Upkeep <span>Property Maintenance</span></h1>
+    <p class="tagline">Professional Property Maintenance, One Request Away.</p>
+    <p class="page-title">Submit a Work Order</p>
+  </div>
+</header>
+
+<!-- ═══════════════ FORM ═══════════════ -->
+<div class="form-wrap" id="formWrap">
+  <form
+    id="workOrderForm"
+    name="work-order"
+    method="POST"
+    data-netlify="true"
+    netlify
+    enctype="multipart/form-data"
+  >
+    <input type="hidden" name="form-name" value="work-order">
+
+    <!-- ── 1. REQUESTOR INFO ── -->
+    <div class="form-section">
+      <div class="section-header">
+        <div class="section-icon">👤</div>
+        <div>
+          <div class="section-title">Requestor Information</div>
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div class="field">
+          <label>Your Name <span class="req">*</span></label>
+          <input type="text" name="requestor_name" required>
+          <span class="error-msg">Please enter your name.</span>
+        </div>
+        <div class="field">
+          <label>Company / Management Co.</label>
+          <input type="text" name="company_name">
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="requestor_email" required>
+          <span class="error-msg">Please enter a valid email.</span>
+        </div>
+        <div class="field">
+          <label>Phone <span class="req">*</span></label>
+          <input type="tel" name="requestor_phone" required placeholder="(615) 555-0100">
+          <span class="error-msg">Please enter your phone number.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2. PROPERTY INFO ── -->
+    <div class="form-section">
+      <div class="section-header">
+        <div class="section-icon">🏠</div>
+        <div>
+          <div class="section-title">Property Information</div>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Street Address <span class="req">*</span></label>
+          <input type="text" name="property_street" required>
+          <span class="error-msg">Please enter the property address.</span>
+        </div>
+      </div>
+      <div class="field-row three-col">
+        <div class="field">
+          <label>City <span class="req">*</span></label>
+          <input type="text" name="property_city" required>
+          <span class="error-msg">Required.</span>
+        </div>
+        <div class="field">
+          <label>State <span class="req">*</span></label>
+          <input type="text" name="property_state" required value="TN">
+          <span class="error-msg">Required.</span>
+        </div>
+        <div class="field">
+          <label>ZIP <span class="req">*</span></label>
+          <input type="text" name="property_zip" required>
+          <span class="error-msg">Required.</span>
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div class="field">
+          <label>Unit Number <span class="opt">(if applicable)</span></label>
+          <input type="text" name="unit_number">
+        </div>
+        <div class="field">
+          <label>Property Type <span class="req">*</span></label>
+          <select name="property_type" required>
+            <option value="">Select type…</option>
+            <option>Single-Family</option>
+            <option>Multi-Family</option>
+            <option>Townhome</option>
+            <option>Condo</option>
+            <option>Other</option>
+          </select>
+          <span class="error-msg">Please select a property type.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 3. TENANT INFO ── -->
+    <div class="form-section">
+      <div class="section-header">
+        <div class="section-icon">🔑</div>
+        <div>
+          <div class="section-title">Tenant Information</div>
+          <span class="section-subtitle">Optional — helps us coordinate access</span>
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div class="field">
+          <label>Tenant Name</label>
+          <input type="text" name="tenant_name">
+        </div>
+        <div class="field">
+          <label>Tenant Phone</label>
+          <input type="tel" name="tenant_phone" placeholder="(615) 555-0100">
+        </div>
+      </div>
+      <div class="field">
+        <label>Permission to contact tenant directly?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="contact_tenant" value="Yes"><span>Yes</span></label>
+          <label><input type="radio" name="contact_tenant" value="No" checked><span>No</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 4. WORK ORDER DETAILS ── -->
+    <div class="form-section">
+      <div class="section-header">
+        <div class="section-icon">🔧</div>
+        <div>
+          <div class="section-title">Work Order Details</div>
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div class="field">
+          <label>Category of Work <span class="req">*</span></label>
+          <select name="work_category" required>
+            <option value="">Select category…</option>
+            <option>General Maintenance</option>
+            <option>Plumbing</option>
+            <option>Electrical</option>
+            <option>HVAC</option>
+            <option>Appliance Repair</option>
+            <option>Landscaping / Exterior</option>
+            <option>Make Ready / Turnover</option>
+            <option>Emergency Repair</option>
+            <option>Other</option>
+          </select>
+          <span class="error-msg">Please select a category.</span>
+        </div>
+        <div class="field">
+          <label>Urgency Level <span class="req">*</span></label>
+          <select name="urgency" required>
+            <option value="">Select urgency…</option>
+            <option>Emergency (24hr response)</option>
+            <option>Urgent (48hr response)</option>
+            <option>Routine (scheduled)</option>
+            <option>Flexible</option>
+          </select>
+          <span class="error-msg">Please select an urgency level.</span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Description of Issue <span class="req">*</span></label>
+          <textarea name="description" required placeholder="Please describe the issue, including its location within the unit and any relevant history (e.g., recurring leak under kitchen sink, started 3 days ago)."></textarea>
+          <span class="error-msg">Please describe the issue.</span>
+        </div>
+      </div>
+      <div class="field" style="margin-top:1rem">
+        <label>Photos <span class="opt">(up to 5 images)</span></label>
+        <div class="upload-area" id="uploadArea">
+          <div class="upload-icon">📷</div>
+          <p><strong>Tap to upload</strong> or drag photos here</p>
+          <p class="upload-hint">JPG, PNG, HEIC — max 10 MB each</p>
+        </div>
+        <input type="file" name="photos" id="photoInput" multiple accept="image/*" style="display:none">
+        <div class="upload-previews" id="uploadPreviews"></div>
+      </div>
+    </div>
+
+    <!-- ── SMS CONSENT ── -->
+    <div class="form-section">
+      <div class="consent-row">
+        <input type="checkbox" id="smsConsent" name="sms_consent" value="yes">
+        <label for="smsConsent">By checking this box, I consent to receive marketing and promotional text messages from UpKeep Property Maintenance at the phone number I have provided above. Message and data rates may apply. Message frequency varies. Reply HELP for help and STOP to stop. I consent to the <a href="https://www.upkeeppropertymaintenance.com/terms-of-service" target="_blank" rel="noopener">Terms of Service</a> and <a href="https://www.upkeeppropertymaintenance.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</label>
+      </div>
+    </div>
+
+    <!-- ── SUBMIT ── -->
+    <div class="submit-wrap">
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span>Submit Work Order</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- ═══════════════ CONFIRMATION ═══════════════ -->
+<div class="confirmation" id="confirmation">
+  <div class="confirm-card">
+    <div class="confirm-icon">✅</div>
+    <h2>Work Order Submitted</h2>
+    <p class="confirm-note">We'll confirm your work order within 2 business hours.</p>
+    <dl class="confirm-summary" id="confirmSummary"></dl>
+    <p class="confirm-footer">A copy of this request has been sent to our team. We'll reach out to the email and phone number provided to confirm scheduling and next steps.</p>
+    <button class="btn-another" onclick="resetForm()">Submit Another Work Order</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  &copy; 2026 Upkeep Property Maintenance &middot; 130 Wilson Pike Circle, Brentwood, TN 37027
+</footer>
+
+<script>
+(function(){
+  const form = document.getElementById('workOrderForm');
+  const formWrap = document.getElementById('formWrap');
+  const confirmation = document.getElementById('confirmation');
+  const confirmSummary = document.getElementById('confirmSummary');
+  const uploadArea = document.getElementById('uploadArea');
+  const photoInput = document.getElementById('photoInput');
+  const previewsEl = document.getElementById('uploadPreviews');
+  let uploadedFiles = [];
+
+  /* ── Photo upload ── */
+  uploadArea.addEventListener('click',function(){ photoInput.click(); });
+  uploadArea.addEventListener('dragover',function(e){ e.preventDefault(); this.classList.add('dragover'); });
+  uploadArea.addEventListener('dragleave',function(){ this.classList.remove('dragover'); });
+  uploadArea.addEventListener('drop',function(e){
+    e.preventDefault(); this.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+  });
+  photoInput.addEventListener('change',function(){ handleFiles(this.files); });
+
+  function handleFiles(files){
+    var remaining = 5 - uploadedFiles.length;
+    var arr = Array.from(files).slice(0, remaining);
+    arr.forEach(function(f){
+      if(!f.type.startsWith('image/') || f.size > 10*1024*1024) return;
+      uploadedFiles.push(f);
+      var reader = new FileReader();
+      reader.onload = function(e){
+        var div = document.createElement('div');
+        div.className = 'upload-preview';
+        div.innerHTML = '<img src="'+e.target.result+'" alt="Preview"><button type="button" class="remove-btn" title="Remove">&times;</button>';
+        div.querySelector('.remove-btn').addEventListener('click',function(){
+          var idx = Array.from(previewsEl.children).indexOf(div);
+          uploadedFiles.splice(idx,1);
+          div.remove();
+          updateFileInput();
+        });
+        previewsEl.appendChild(div);
+      };
+      reader.readAsDataURL(f);
+    });
+    updateFileInput();
+  }
+
+  function updateFileInput(){
+    var dt = new DataTransfer();
+    uploadedFiles.forEach(function(f){ dt.items.add(f); });
+    photoInput.files = dt.files;
+  }
+
+  /* ── Validation ── */
+  function validateForm(){
+    var valid = true;
+    form.querySelectorAll('[required]').forEach(function(el){
+      var field = el.closest('.field');
+      if(el.type === 'checkbox'){
+        /* handled separately */
+        return;
+      }
+      if(el.type === 'radio'){
+        var name = el.name;
+        var checked = form.querySelector('input[name="'+name+'"]:checked');
+        if(!checked){ valid = false; }
+        return;
+      }
+      if(field){
+        if(!el.value.trim()){
+          field.classList.add('invalid');
+          valid = false;
+        } else {
+          field.classList.remove('invalid');
+        }
+      }
+    });
+    /* Email pattern */
+    var emailEl = form.querySelector('[name="requestor_email"]');
+    if(emailEl.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)){
+      emailEl.closest('.field').classList.add('invalid');
+      valid = false;
+    }
+    return valid;
+  }
+
+  /* Clear invalid on input */
+  form.addEventListener('input',function(e){
+    var field = e.target.closest('.field');
+    if(field && field.classList.contains('invalid') && e.target.value.trim()){
+      field.classList.remove('invalid');
+    }
+  });
+
+  /* ── Submit ── */
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!validateForm()){
+      var first = form.querySelector('.field.invalid, [style*="display:block"] .error-msg');
+      if(first) first.scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Submitting…';
+
+    var formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    }).then(function(){
+      window.location.href = '/thank-you';
+    }).catch(function(){
+      window.location.href = '/thank-you';
+    });
+  });
+
+  function showConfirmation(fd){
+    var html = '';
+    var pairs = [
+      ['Requestor', fd.get('requestor_name') + (fd.get('company_name') ? ' — '+fd.get('company_name') : '')],
+      ['Contact', fd.get('requestor_email') + '  ·  '+fd.get('requestor_phone')],
+      ['Property', fd.get('property_street') + (fd.get('unit_number') ? ', Unit '+fd.get('unit_number') : '') + ', '+fd.get('property_city')+', '+fd.get('property_state')+' '+fd.get('property_zip')],
+      ['Type', fd.get('property_type')],
+      ['Category', fd.get('work_category')],
+      ['Urgency', fd.get('urgency')],
+      ['Description', fd.get('description')]
+    ];
+
+    pairs.forEach(function(p){
+      html += '<dt>'+p[0]+'</dt><dd>'+escHtml(p[1])+'</dd>';
+    });
+    confirmSummary.innerHTML = html;
+    formWrap.classList.add('hidden');
+    confirmation.classList.add('active');
+    window.scrollTo({ top:0, behavior:'smooth' });
+  }
+
+  function escHtml(s){
+    var d = document.createElement('div');
+    d.textContent = s || '';
+    return d.innerHTML;
+  }
+
+  window.resetForm = function(){
+    form.reset();
+    uploadedFiles = [];
+    previewsEl.innerHTML = '';
+    formWrap.classList.remove('hidden');
+    confirmation.classList.remove('active');
+    window.scrollTo({ top:0, behavior:'smooth' });
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = false;
+    btn.querySelector('span').textContent = 'Submit Work Order';
+  };
+})();
+</script>
+</body>
+</html>
