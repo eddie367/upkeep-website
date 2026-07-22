@@ -362,6 +362,33 @@ input:focus, select:focus, textarea:focus {
 .article-body ul, .article-body ol { margin: 0 0 18px 22px; color: var(--ink-soft); }
 .article-body li { margin-bottom: 8px; }
 .article-body strong { color: var(--ink); }
+.article-body .table-scroll { overflow-x: auto; margin: 0 0 22px; }
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.96rem;
+  min-width: 460px;
+}
+.article-body th, .article-body td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.article-body thead th {
+  background: var(--paper-deep);
+  color: var(--pine);
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+.article-body tbody tr:last-child td { border-bottom: none; }
+.article-body .takeaway {
+  background: var(--paper-deep);
+  border-left: 4px solid var(--emerald);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 0 0 22px;
+}
+.article-body .takeaway p { margin: 0; }
 
 /* Page hero (interior pages) */
 .page-hero { padding: 72px 0 48px; }

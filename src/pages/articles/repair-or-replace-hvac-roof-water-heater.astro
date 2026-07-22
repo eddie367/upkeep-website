@@ -1,0 +1,107 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+
+const faqs = [
+  {
+    q: 'When should you replace an HVAC system instead of repairing it?',
+    a: 'Replace when the system is past about 10 to 12 years and a repair would cost more than a third of a new system, or when it needs its second major repair in two years. A common rule: if the repair cost times the unit’s age is more than about 5,000, replace it.',
+  },
+  {
+    q: 'Is it worth repairing an old water heater?',
+    a: 'A tank water heater past 10 years that is leaking from the tank itself is not worth repairing, replace it. Repairs make sense for younger units or for fixable parts like a heating element, thermostat, or valve.',
+  },
+  {
+    q: 'How do you know if a roof needs replacing or just repair?',
+    a: 'Isolated storm damage or a single leak is usually a repair. Replace when shingles are curling and losing granules across the whole roof, the roof is past 20 years, or repairs are becoming a yearly event.',
+  },
+];
+---
+<ArticleLayout
+  slug="repair-or-replace-hvac-roof-water-heater"
+  eyebrow="Decision Guide"
+  title="Repair or Replace? A Cost Guide for HVAC, Roofs, and Water Heaters"
+  description="When it is worth repairing a major system and when replacement is the smarter money, with the age and cost thresholds that make the call for you."
+  faqs={faqs}
+>
+  <p>
+    The repair-or-replace call comes down to two numbers: <strong>the age of
+    the system and the cost of the repair relative to a new one.</strong>
+    Repair a young system with a cheap fix. Replace an old system facing an
+    expensive one. The gray zone in between is where most owners overspend,
+    either sinking money into a dying unit or replacing something with years
+    left. Here are the thresholds that make the call.
+  </p>
+
+  <h2>The universal rule</h2>
+  <div class="takeaway">
+    <p>
+      If the repair would cost more than one-third the price of a new system,
+      or the system is past the middle of its expected lifespan and needs its
+      second major repair, replacement is usually the smarter money. For
+      HVAC specifically, a widely used shortcut is to multiply the repair cost
+      by the unit's age: if the result tops about 5,000, replace it.
+    </p>
+  </div>
+
+  <h2>HVAC</h2>
+  <p>
+    A central AC lasts 12 to 15 years, a furnace 15 to 20 (see
+    <a href="/articles/how-long-do-home-systems-last/">full lifespans</a>).
+    Repair a system under 10 years for most issues. Once it passes 12, weigh
+    every repair against replacement, especially compressor or coil failures,
+    which are the expensive ones. A system using older R-22 refrigerant is
+    also a replace signal, since that refrigerant is phased out and costly.
+  </p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Lean repair</th><th>Lean replace</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Age</td><td>Under 10 years</td><td>Over 12 years</td></tr>
+        <tr><td>Repair cost</td><td>Under 1/3 of new</td><td>Over 1/3 of new</td></tr>
+        <tr><td>Repair history</td><td>First repair</td><td>Second major repair in 2 years</td></tr>
+        <tr><td>Refrigerant</td><td>Current (R-410A)</td><td>Old R-22</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Water heater</h2>
+  <p>
+    Tank heaters last 8 to 12 years. The deciding question is <strong>where
+    the failure is.</strong> A bad heating element, thermostat, or valve on a
+    younger unit is a cheap repair. But if the tank itself is leaking, or the
+    unit is past 10 years, replace it, a repaired old tank often fails again
+    within months, and a tank failure on an upper floor causes far more damage
+    than the heater is worth.
+  </p>
+
+  <h2>Roof</h2>
+  <p>
+    A roof is the one system where repair stays viable longest, because damage
+    is often local. Repair isolated storm damage, a single leak, or a small
+    section of lifted shingles. Replace when granule loss and curling show up
+    across the whole roof, when the roof is past 20 years, or when you are
+    patching leaks every season. In Middle Tennessee, an annual inspection is
+    what keeps you ahead of that call instead of behind it.
+  </p>
+
+  <h2>The landlord angle</h2>
+  <p>
+    On a rental, factor in tenant disruption and emergency risk, not just the
+    quote. A marginal water heater you would nurse along in your own home is
+    worth replacing proactively in a rental, because a failure means a tenant
+    call, possible water damage, and an after-hours bill. Planned replacement
+    on your schedule always beats emergency replacement on the system's.
+  </p>
+
+  <h2>The bottom line</h2>
+  <p>
+    Know the age, compare the repair to one-third of new, and count the repair
+    history. Upkeep handles both sides of the call across Middle Tennessee, we
+    will tell you honestly when a repair beats a replacement and when it does
+    not, on <a href="/services/hvac/">HVAC</a>,
+    <a href="/services/roofing/">roofing</a>, and plumbing. One
+    <a href="/work-order/">service request</a> gets you a straight answer.
+  </p>
+</ArticleLayout>
