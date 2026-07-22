@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+import { tiers } from '../data/turnovers.js';
+---
+<Layout
+  title="Unit Turnover & Make-Ready Packages in Middle Tennessee | Upkeep"
+  description="Three flat-rate turnover packages take your rental from move-out to rent-ready: Ready Clean, Full Refresh, and Full Upgrade. Serving Nashville and Middle Tennessee."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Unit Turnovers</span>
+      <h1>Every vacant day costs you money.</h1>
+      <p class="lede">
+        A turnover is a race between your calendar and your cash flow. Our
+        make-ready packages put the whole turn, cleaning, paint, repairs, and
+        flooring, under one flat-rate quote and one schedule.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="grid grid-3">
+        {tiers.map((t) => (
+          <div class={`card tier${t.featured ? ' featured' : ''}`}>
+            {t.featured && <span class="flag">Most Popular</span>}
+            <h3>{t.name}</h3>
+            <p class="for">{t.for}</p>
+            <ul class="checks">
+              {t.includes.map((i) => <li>{i}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div>
+        <h2>How a turnover runs</h2>
+        <ul class="checks">
+          <li>Walk-through at move-out, scope confirmed same day</li>
+          <li>Flat-rate quote for the package, approved before work starts</li>
+          <li>All trades scheduled back to back, one crew coordinating</li>
+          <li>Move-in inspection with photos when the unit is rent-ready</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Why packages beat piecemeal</h2>
+        <p class="lede">
+          Booking a cleaner, a painter, and a handyman separately adds days of
+          vacancy between each trade. One coordinated crew closes those gaps,
+          and the rent from even two saved vacancy days usually covers the
+          difference.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel
+    heading="Have a unit going vacant?"
+    body="Tell us the move-out date and we will have it rent-ready on a schedule you can put in the listing."
+  />
+</Layout>

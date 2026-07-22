@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+import { trades } from '../data/trades.js';
+---
+<Layout
+  title="Home Repairs & Maintenance for Homeowners in Middle Tennessee | Upkeep"
+  description="The same crews that maintain 350+ rental units, for your own home. Repairs, punch lists, painting, flooring, and seasonal upkeep across Nashville and Middle Tennessee."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">For Homeowners</span>
+      <h1>Portfolio-grade maintenance, for your own home.</h1>
+      <p class="lede">
+        Most of our week is spent keeping rental portfolios running, which
+        means our crews fix the same problems dozens of times a month. Bring
+        that repetition to your house: one visit, a whole punch list, a
+        flat-rate quote before we start.
+      </p>
+      <div class="hero-ctas">
+        <a href="/work-order/" class="btn btn-primary">Request a Repair</a>
+        <a href="/services/" class="btn btn-ghost">See All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>What homeowners call us for</h2>
+      <div class="grid grid-4">
+        {trades.map((t) => (
+          <a class="card" href={`/services/${t.slug}/`}>
+            <h3>{t.name}</h3>
+            <p>{t.short}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+      <div class="notice">
+        Have a list of small jobs? That is our specialty. One scheduled visit
+        beats four separate service calls, and it is priced that way.
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel
+    heading="Have a repair list at home?"
+    body="Send us the list with photos and we will send back one flat-rate quote for the whole thing."
+  />
+</Layout>

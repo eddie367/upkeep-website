@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaPanel from '../../components/CtaPanel.astro';
+import { cities } from '../../data/cities.js';
+const primaries = cities.filter((c) => c.primary);
+const serving = cities.filter((c) => !c.primary);
+---
+<Layout
+  title="Service Area | Property Maintenance Across Nashville & Middle Tennessee | Upkeep"
+  description="Upkeep serves Nashville, Brentwood, Franklin, Spring Hill, Murfreesboro, Columbia, Hendersonville, Mt. Juliet, Nolensville, Smyrna, and Gallatin."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Service Area</span>
+      <h1>Protecting investments across Middle Tennessee.</h1>
+      <p class="lede">
+        Based in Brentwood, serving rental portfolios and homes across the
+        Nashville metro and beyond.
+      </p>
+    </div>
+  </section>
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <h2>Primary markets</h2>
+      <div class="grid grid-3">
+        {primaries.map((c) => (
+          <a class="card" href={`/service-area/${c.slug}/`}>
+            <h3>{c.name}</h3>
+            <p>{c.blurb}</p>
+            <span class="more">Maintenance in {c.name} →</span>
+          </a>
+        ))}
+      </div>
+      <h2 style="margin-top: 48px;">Also serving</h2>
+      <div class="grid grid-4">
+        {serving.map((c) => (
+          <a class="card" href={`/service-area/${c.slug}/`}>
+            <h3>{c.name}</h3>
+            <p>{c.county}</p>
+            <span class="more">Maintenance in {c.name} →</span>
+          </a>
+        ))}
+      </div>
+      <div class="notice">
+        Have properties just outside these areas? Call us.
+      </div>
+    </div>
+  </section>
+  <CtaPanel />
+</Layout>

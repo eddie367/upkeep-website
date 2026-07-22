@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StatsBand from '../components/StatsBand.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+import { site } from '../data/site.js';
+import { trades } from '../data/trades.js';
+import { tiers } from '../data/turnovers.js';
+import { cities } from '../data/cities.js';
+---
+<Layout
+  title="Upkeep Property Maintenance | Property Maintenance in Nashville & Middle Tennessee"
+  description="One call for every trade. Upkeep handles repairs, unit turnovers, and seasonal upkeep for property managers, landlords, and homeowners across Nashville and Middle Tennessee. Flat-rate pricing, 350+ units maintained."
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Middle Tennessee's Property Maintenance Partner</span>
+        <h1>Your property is an asset. <span class="accent">Protect it.</span></h1>
+        <p class="lede">
+          Deferred maintenance quietly eats property values and investor
+          returns. Upkeep keeps your portfolio performing with every trade
+          covered, flat-rate pricing, and one call for everything.
+        </p>
+        <div class="hero-ctas">
+          <a href="/work-order/" class="btn btn-primary">Request Service</a>
+          <a href="/services/" class="btn btn-ghost">View All Services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="eyebrow">How it works</span>
+        <h3>One relationship, every repair</h3>
+        <ul>
+          <li>Request service <strong>2 min online</strong></li>
+          <li>We confirm it <strong>within 2 business hours</strong></li>
+          <li>Routine work scheduled <strong>within 48 hours</strong></li>
+          <li>Flat-rate quote before work begins <strong>$0 surprises</strong></li>
+          <li>Photo documentation on completion <strong>every job</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <StatsBand />
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Services</span>
+      <h2>Every trade. One relationship.</h2>
+      <p class="lede">
+        Twelve trades under one roof, so nothing falls through the cracks and
+        you never juggle contractors again.
+      </p>
+      <div class="grid grid-4">
+        {trades.map((t) => (
+          <a class="card" href={`/services/${t.slug}/`}>
+            <h3>{t.name}</h3>
+            <p>{t.short}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">Unit Turnovers</span>
+      <h2>Every vacant day costs you money.</h2>
+      <p class="lede">
+        Three make-ready packages take a unit from move-out to rent-ready on a
+        known price and a known timeline.
+      </p>
+      <div class="grid grid-3">
+        {tiers.map((t) => (
+          <div class={`card tier${t.featured ? ' featured' : ''}`}>
+            {t.featured && <span class="flag">Most Popular</span>}
+            <h3>{t.name}</h3>
+            <p class="for">{t.for}</p>
+            <ul class="checks">
+              {t.includes.map((i) => <li>{i}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top: 28px;">
+        <a href="/turnovers/" class="btn btn-ghost">Request a Turnover</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Who We Serve</span>
+        <h2>Built for portfolios. Available to everyone.</h2>
+        <p class="lede">
+          Upkeep was built around professional property management, and the
+          same crew serves landlords and homeowners across Middle Tennessee.
+        </p>
+      </div>
+      <div class="grid" style="margin-top: 0;">
+        <a class="card" href="/property-managers/">
+          <h3>Property Managers & Landlords</h3>
+          <p>One vendor for the whole portfolio. Work orders, turnovers, and documentation your owners can see.</p>
+          <span class="more">For portfolios →</span>
+        </a>
+        <a class="card" href="/homeowners/">
+          <h3>Homeowners</h3>
+          <p>The same licensed trades and flat-rate pricing we give portfolios, for your own home. Repairs and punch lists done in one visit.</p>
+          <span class="more">For homeowners →</span>
+        </a>
+        <a class="card" href="/real-estate-agents/">
+          <h3>Real Estate Agents</h3>
+          <p>Inspection repairs quoted line by line and finished on closing timelines. The contractor your rolodex is missing.</p>
+          <span class="more">For agents →</span>
+        </a>
+        <a class="card" href="/tenants/">
+          <h3>Tenants</h3>
+          <p>Live in a property we maintain? Submit a maintenance request online with photos and we will coordinate the rest.</p>
+          <span class="more">For tenants →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark">
+    <div class="wrap">
+      <span class="eyebrow" style="color: var(--amber);">Why Upkeep</span>
+      <h2>Maintenance done right protects your ROI.</h2>
+      <div class="grid grid-4">
+        <div>
+          <h3 style="color: var(--amber-soft);">One call for everything</h3>
+          <p>Twelve trades, one point of contact. No more chasing four contractors for one unit.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--amber-soft);">Flat-rate pricing</h3>
+          <p>Quoted before work begins. No hourly meters, no surprise invoices.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--amber-soft);">Fast response, fewer vacancies</h3>
+          <p>Work orders confirmed in two business hours, routine work scheduled within 48.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--amber-soft);">Proactive, not reactive</h3>
+          <p>We flag what is aging on every visit, so small issues get caught before they become capital expenses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Service Area</span>
+      <h2>Protecting investments across Middle Tennessee.</h2>
+      <div class="grid grid-4">
+        {cities.map((c) => (
+          <a class="card" href={`/service-area/${c.slug}/`}>
+            <h3>{c.name}</h3>
+            <p>{c.county}</p>
+            <span class="more">{c.primary ? 'Primary market →' : 'Serving →'}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel />
+</Layout>

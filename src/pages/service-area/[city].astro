@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaPanel from '../../components/CtaPanel.astro';
+import { cities } from '../../data/cities.js';
+import { trades } from '../../data/trades.js';
+import { site } from '../../data/site.js';
+
+export function getStaticPaths() {
+  return cities.map((c) => ({ params: { city: c.slug }, props: { c } }));
+}
+const { c } = Astro.props;
+const nearby = cities.filter((x) => x.slug !== c.slug).slice(0, 4);
+---
+<Layout
+  title={`Property Maintenance in ${c.name}, TN | Upkeep Property Maintenance`}
+  description={`Repairs, unit turnovers, and seasonal upkeep in ${c.name}, Tennessee. Twelve trades under one roof for property managers, landlords, and homeowners. Call ${site.phone}.`}
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Service Area / {c.county}</span>
+      <h1>Property maintenance in {c.name}, TN</h1>
+      <p class="lede">{c.blurb}</p>
+      <div class="hero-ctas">
+        <a href="/work-order/" class="btn btn-primary">Request Service in {c.name}</a>
+        <a href={site.phoneHref} class="btn btn-ghost">Call {site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Services we run in {c.name}</h2>
+      <div class="grid grid-4">
+        {trades.map((t) => (
+          <a class="card" href={`/services/${t.slug}/`}>
+            <h3>{t.name}</h3>
+            <p>{t.short}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>For {c.name} rental owners</h2>
+        <p class="lede">
+          Whether you manage one rental or a full portfolio in {c.name}, you
+          get the same model: flat-rate quotes before work begins, a 48 hour
+          target on routine work orders, and photo documentation on every job.
+          Turnovers run as <a href="/turnovers/">packaged make-readies</a> so
+          vacancy days stay predictable.
+        </p>
+      </div>
+      <div>
+        <h2>Nearby areas we serve</h2>
+        <ul class="checks">
+          {nearby.map((n) => (
+            <li><a href={`/service-area/${n.slug}/`}>Property maintenance in {n.name}</a></li>
+          ))}
+          <li><a href="/service-area/">Full service area</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel heading={`Need maintenance help in ${c.name}?`} />
+</Layout>

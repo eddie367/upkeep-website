@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site.js';
+---
+<Layout
+  title="Terms of Service | Upkeep Property Maintenance"
+  description="The terms that govern Upkeep Property Maintenance services in Middle Tennessee."
+>
+  <section class="page-hero">
+    <div class="wrap" style="max-width: 820px;">
+      <span class="eyebrow">Legal</span>
+      <h1>Terms of Service</h1>
+      <p class="lede">Last updated: March 2026. Please read these terms carefully before using our services.</p>
+      <div class="notice">By engaging Upkeep Property Maintenance for services, whether through our website, phone, email, or any other channel, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</div>
+    </div>
+  </section>
+  <section style="padding-top: 0;">
+    <div class="wrap" style="max-width: 820px;">
+      <h2>1. Services</h2>
+      <p>Upkeep Property Maintenance ("Upkeep," "we," "us," or "our") provides property maintenance, repair, and turnover services in Middle Tennessee. Our services include but are not limited to: HVAC, plumbing, electrical, roofing, painting, flooring, general maintenance, and unit turnover coordination.</p>
+      <p>All services are subject to availability and our ability to dispatch qualified contractors. We reserve the right to decline any service request at our sole discretion.</p>
+
+      <h2 style="margin-top: 40px;">2. Service Requests and Estimates</h2>
+      <p>Submitting a quote request through our website or contacting us does not constitute a binding service agreement. A binding agreement is formed only when we provide a written confirmation of scope and pricing and you provide written or verbal authorization to proceed.</p>
+      <p>Estimates provided are based on information available at the time of quoting. Final pricing may differ if additional work is required due to conditions discovered during service. We will notify you of any material scope changes before proceeding.</p>
+
+      <h2 style="margin-top: 40px;">3. Pricing and Payment</h2>
+      <p>Our pricing is based on flat rates, hourly rates, or package pricing as outlined in our rate card or service agreement. All prices are in US Dollars.</p>
+      <ul class="checks">
+        <li>Invoices are due within the timeframe specified on the invoice (typically net 15 or net 30 days).</li>
+        <li>Late payments may be subject to a late fee of 1.5% per month on the outstanding balance.</li>
+        <li>We reserve the right to suspend services for accounts with overdue balances.</li>
+        <li>Emergency and after-hours services are subject to premium rates as disclosed at time of request.</li>
+      </ul>
+
+      <h2 style="margin-top: 40px;">4. Cancellations and Rescheduling</h2>
+      <p>We ask for at least 24 hours notice for cancellations or rescheduling. Cancellations with less than 24 hours notice may result in a cancellation fee equal to a minimum service call charge. Emergency cancellations will be handled on a case-by-case basis.</p>
+
+      <h2 style="margin-top: 40px;">5. Access to Property</h2>
+      <p>You agree to provide safe and reasonable access to the property for our contractors to perform the requested services. You are responsible for notifying occupants of scheduled service visits in accordance with applicable landlord-tenant laws.</p>
+      <p>We are not responsible for delays caused by restricted access, uncooperative occupants, or failure to provide required access within agreed timeframes.</p>
+
+      <h2 style="margin-top: 40px;">6. Property Manager Client Relationships</h2>
+      <p>Property managers who engage Upkeep on behalf of property owners represent that they have the authority to authorize maintenance services and payment. Property managers are responsible for ensuring owner authorization for services above any agreed approval threshold.</p>
+
+      <h2 style="margin-top: 40px;">7. Warranty and Workmanship</h2>
+      <p>We warrant that all services will be performed in a professional and workmanlike manner. If you are not satisfied with the quality of work performed, please notify us within 7 days of service completion and we will work to resolve the issue at no additional charge for covered deficiencies.</p>
+      <p>This warranty does not cover damage caused by misuse, neglect, unauthorized modifications, acts of nature, or pre-existing conditions. Manufacturer warranties on parts or materials are separate from our workmanship warranty.</p>
+
+      <h2 style="margin-top: 40px;">8. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, Upkeep Property Maintenance's total liability to you for any claims arising out of or related to our services shall not exceed the total amount paid by you for the specific service giving rise to the claim in the 90 days preceding the claim.</p>
+      <p>We are not liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, loss of revenue, loss of use, or damage to property not directly caused by our work.</p>
+
+      <h2 style="margin-top: 40px;">9. Insurance and Licensing</h2>
+      <p>Upkeep Property Maintenance carries general liability insurance. All contractors dispatched through Upkeep are required to maintain their own applicable licenses and insurance coverage. Certificates of insurance are available upon request.</p>
+
+      <h2 style="margin-top: 40px;">10. Independent Contractors</h2>
+      <p>The contractors and technicians who perform services through Upkeep are independent contractors, not employees of Upkeep Property Maintenance. We are not responsible for their acts or omissions beyond the scope of work authorized through Upkeep's work order system.</p>
+
+      <h2 style="margin-top: 40px;">11. Dispute Resolution</h2>
+      <p>In the event of a dispute arising from our services, both parties agree to first attempt resolution through good-faith negotiation. If negotiation fails, disputes shall be resolved through binding arbitration in Davidson County, Tennessee, in accordance with the American Arbitration Association rules, except that either party may seek injunctive relief in a court of competent jurisdiction.</p>
+
+      <h2 style="margin-top: 40px;">12. Governing Law</h2>
+      <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Tennessee, without regard to its conflict of law provisions.</p>
+
+      <h2 style="margin-top: 40px;">13. Changes to These Terms</h2>
+      <p>We reserve the right to modify these Terms of Service at any time. Material changes will be posted on our website. Your continued use of our services after changes are posted constitutes acceptance of the updated terms.</p>
+
+      <h2 style="margin-top: 40px;">14. Contact Us</h2>
+      <p>For questions about these Terms of Service, please contact us:</p>
+      <ul class="checks">
+        <li>Email: <a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li>Phone: <a href={site.phoneHref}>{site.phone}</a></li>
+        <li>Service Area: Middle Tennessee</li>
+      </ul>
+    </div>
+  </section>
+</Layout>

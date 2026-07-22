@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+import { site } from '../data/site.js';
+---
+<Layout
+  title="Inspection Repairs & Contractor Help for Real Estate Agents | Upkeep"
+  description="A reliable repair partner for Middle Tennessee real estate agents. Inspection report repairs, pre-listing punch lists, and flat-rate quotes your clients can trust, on closing timelines."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">For Real Estate Agents</span>
+      <h1>The contractor your rolodex is missing.</h1>
+      <p class="lede">
+        Every agent has lost sleep over an inspection report two weeks before
+        closing. The repair list is in hand, the deadline is real, and every
+        contractor in your phone is booked, unlicensed, or not answering.
+        Upkeep is the maintenance partner agents keep for exactly that moment.
+      </p>
+      <div class="hero-ctas">
+        <a href="/work-order/" class="btn btn-primary">Send Us a Repair List</a>
+        <a href={site.phoneHref} class="btn btn-ghost">Call {site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>What we handle for agents</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Inspection report repairs</h3>
+          <p>Send the inspection report and we quote the repair items flat, line by line. Your client sees a real number fast, and the work gets documented with photos for the repair amendment.</p>
+        </div>
+        <div class="card">
+          <h3>Pre-listing punch lists</h3>
+          <p>The small stuff that costs sellers money in negotiations: caulk, paint touch-ups, loose fixtures, sticking doors. One visit before photos, and the listing shows like it should.</p>
+        </div>
+        <div class="card">
+          <h3>Closing-deadline scheduling</h3>
+          <p>Repair timelines in a contract are not suggestions. We schedule against your closing date and confirm completion with photos you can forward to the other side.</p>
+        </div>
+        <div class="card">
+          <h3>Twelve trades, one call</h3>
+          <p>Inspection lists cross trades by nature: a little electrical, a little plumbing, some rot, some paint. One crew handles the whole list instead of four subcontractors handling a quarter each.</p>
+        </div>
+        <div class="card">
+          <h3>Documentation for the file</h3>
+          <p>Photo reports and itemized invoices for every job, so the repair receipt your client hands over at closing actually holds up.</p>
+        </div>
+        <div class="card">
+          <h3>A partner for your clients after closing</h3>
+          <p>Buyers ask agents for contractor referrals for years after the sale. Be the agent whose referral answers the phone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>Why agents keep us in the rolodex</h2>
+        <p class="lede">
+          We are investors ourselves, so we work on transaction timelines
+          constantly and we know a delayed repair can delay a closing. You get
+          a confirmed request within two business hours, a flat quote your
+          client can approve without fear, and finished work with proof.
+        </p>
+      </div>
+      <div>
+        <h2>How to work with us</h2>
+        <ul class="checks">
+          <li>Email or submit the inspection report or repair addendum</li>
+          <li>We return a flat-rate, line-item quote</li>
+          <li>Your client approves, we schedule against the closing date</li>
+          <li>Photos and an itemized invoice close out the file</li>
+        </ul>
+        <p style="margin-top: 16px;">
+          Read more: <a href="/articles/inspection-repairs-for-real-estate-agents/">why every agent needs a repair partner in their rolodex</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel
+    heading="Have an inspection report on your desk?"
+    body="Send it over today and we will have a line-item quote back to keep your closing on schedule."
+  />
+</Layout>

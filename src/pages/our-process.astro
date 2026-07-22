@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+import { site } from '../data/site.js';
+
+const steps = [
+  {
+    n: '1',
+    title: 'Request service',
+    body: 'Submit a request online with photos, or call us at ' + site.phone + '. Two minutes, from any device, for property managers, landlords, homeowners, and tenants alike.',
+  },
+  {
+    n: '2',
+    title: 'We confirm within 2 business hours',
+    body: 'A real person reviews the request, asks anything we need to know, and confirms it is in the queue. You are never left wondering if it went into a void.',
+  },
+  {
+    n: '3',
+    title: 'Flat-rate quote, approved before work',
+    body: 'We scope the job and send a flat-rate quote. Nothing starts until you approve it, and if we find something unexpected mid-job, we tell you before proceeding.',
+  },
+  {
+    n: '4',
+    title: 'One crew does the work',
+    body: 'Routine work is scheduled within 48 hours. If the job spans trades, we coordinate all of them as one job on one timeline, and we handle tenant scheduling when you authorize it.',
+  },
+  {
+    n: '5',
+    title: 'Photos, report, and a clean invoice',
+    body: 'Every job closes with photo documentation and an itemized invoice that matches the quote. A paper trail you can forward straight to an owner.',
+  },
+];
+---
+<Layout
+  title="Our Process | How Upkeep Property Maintenance Works"
+  description="Five steps from request to documented completion: request service, confirmation within two business hours, a flat-rate quote, one coordinated crew, and photo documentation on every job."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Our Process</span>
+      <h1>No mystery. No chasing. Five steps.</h1>
+      <p class="lede">
+        Most maintenance headaches come from not knowing what happens next.
+        Ours is the same process every time, on every job, because we built it
+        managing our own rentals.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wrap" style="max-width: 860px;">
+      {steps.map((s) => (
+        <div class="card" style="margin-bottom: 18px; display: flex; gap: 22px; align-items: flex-start;">
+          <div style="font-family: var(--font-head); font-weight: 800; font-size: 2rem; color: var(--emerald); line-height: 1;">{s.n}</div>
+          <div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div>
+        <h2>Why the process is the product</h2>
+        <p class="lede">
+          Any contractor can fix a faucet. What owners and property managers
+          actually buy from us is certainty: a confirmed request, a known
+          price, a known schedule, and proof of what was done. That is what
+          lets you hand off maintenance and stop thinking about it.
+        </p>
+      </div>
+      <div>
+        <h2>What you never get</h2>
+        <ul class="checks">
+          <li>Invoices that grew since the quote</li>
+          <li>Four contractors to coordinate for one unit</li>
+          <li>Jobs marked done with no evidence</li>
+          <li>A week of silence after you ask for help</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel heading="See the process on your next work order." />
+</Layout>

@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WorkOrderForm from '../components/WorkOrderForm.astro';
+import { site } from '../data/site.js';
+---
+<Layout
+  title="Request Service | Upkeep Property Maintenance"
+  description="Submit a maintenance work order online. Add photos, set the urgency, and we will confirm within two business hours. Serving Nashville and Middle Tennessee."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Work Order</span>
+      <h1>Tell us what needs fixing.</h1>
+      <p class="lede">
+        Property managers, landlords, homeowners, and tenants can all submit
+        here. We confirm every work order within two business hours during
+        office hours, {site.hours}. Prefer the phone?
+        Call <a href={site.phoneHref}>{site.phone}</a>.
+      </p>
+    </div>
+  </section>
+  <section style="padding-top: 0;">
+    <div class="wrap" style="max-width: 820px;">
+      <WorkOrderForm />
+    </div>
+  </section>
+</Layout>

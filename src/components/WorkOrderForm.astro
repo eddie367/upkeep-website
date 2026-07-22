@@ -1,0 +1,127 @@
+---
+import { trades } from '../data/trades.js';
+---
+<form
+  class="form-card"
+  name="work-order"
+  method="POST"
+  action="/thank-you/"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  enctype="multipart/form-data"
+>
+  <input type="hidden" name="form-name" value="work-order" />
+  <p style="display:none;"><label>Leave this empty <input name="bot-field" /></label></p>
+
+  <fieldset>
+    <legend>Contact Information</legend>
+    <div class="form-row">
+      <div>
+        <label for="name">Your Name *</label>
+        <input id="name" name="name" required />
+      </div>
+      <div>
+        <label for="company">Company / Management Co.</label>
+        <input id="company" name="company" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div>
+        <label for="phone">Phone *</label>
+        <input id="phone" name="phone" type="tel" required />
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Property Information</legend>
+    <label for="street">Street Address *</label>
+    <input id="street" name="street" required />
+    <div class="form-row">
+      <div>
+        <label for="city">City *</label>
+        <input id="city" name="city" required />
+      </div>
+      <div>
+        <label for="unit">Unit Number</label>
+        <input id="unit" name="unit" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label for="state">State *</label>
+        <input id="state" name="state" value="TN" required />
+      </div>
+      <div>
+        <label for="zip">ZIP *</label>
+        <input id="zip" name="zip" required />
+      </div>
+    </div>
+    <label for="property-type">Property Type *</label>
+    <select id="property-type" name="property-type" required>
+      <option value="">Select one</option>
+      <option>Single-Family</option>
+      <option>Multi-Family</option>
+      <option>Townhome</option>
+      <option>Condo</option>
+      <option>Other</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Tenant Info (optional)</legend>
+    <div class="form-row">
+      <div>
+        <label for="tenant-name">Tenant Name</label>
+        <input id="tenant-name" name="tenant-name" />
+      </div>
+      <div>
+        <label for="tenant-phone">Tenant Phone</label>
+        <input id="tenant-phone" name="tenant-phone" type="tel" />
+      </div>
+    </div>
+    <label class="consent">
+      <input type="checkbox" name="tenant-contact-ok" value="yes" />
+      <span>You have my permission to contact the tenant directly to schedule access.</span>
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Work Order Details</legend>
+    <label for="category">Category of Work *</label>
+    <select id="category" name="category" required>
+      <option value="">Select one</option>
+      {trades.map((t) => <option>{t.name}</option>)}
+      <option>Unit Turnover / Make-Ready</option>
+      <option>Not Sure</option>
+    </select>
+    <label for="urgency">Urgency *</label>
+    <select id="urgency" name="urgency" required>
+      <option value="">Select one</option>
+      <option>Urgent, needs attention within 48 hours</option>
+      <option>Routine, schedule at the next opening</option>
+      <option>Flexible, whenever it fits the calendar</option>
+    </select>
+    <label for="description">Description of the Issue *</label>
+    <textarea id="description" name="description" rows="5" required></textarea>
+    <label for="photos">Photos (optional, up to 5)</label>
+    <input id="photos" name="photos" type="file" accept="image/*" multiple />
+  </fieldset>
+
+  <label class="consent">
+    <input type="checkbox" name="sms-consent" value="yes" required />
+    <span>
+      I agree to receive text messages about this work order and accept the
+      <a href="/terms/">Terms of Service</a> and <a href="/privacy/">Privacy Policy</a>.
+      Message and data rates may apply.
+    </span>
+  </label>
+
+  <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer; width:100%;">
+    Submit Request
+  </button>
+</form>

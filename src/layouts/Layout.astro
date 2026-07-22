@@ -1,0 +1,129 @@
+---
+import { site } from '../data/site.js';
+import { cities } from '../data/cities.js';
+import '../styles/global.css';
+
+const { title, description, schema } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: site.name,
+  url: site.url,
+  telephone: '+1-615-732-3499',
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.state,
+    postalCode: site.address.zip,
+    addressCountry: 'US',
+  },
+  areaServed: cities.map((c) => `${c.name} TN`),
+  openingHours: 'Mo-Fr 07:00-18:00',
+  priceRange: '$$',
+};
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a href="/" class="logo">
+          <img src="/logo-mark.svg" alt="" class="logo-mark" width="46" height="38" />
+          <span>Upkeep<small>Property Maintenance</small></span>
+        </a>
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+        <nav class="nav">
+          <a href="/services/">Services</a>
+          <a href="/turnovers/">Turnovers</a>
+          <a href="/service-area/">Service Area</a>
+          <a href="/about/">About</a>
+          <a href="/articles/">Articles</a>
+          <a href="/faq/">FAQ</a>
+          <a href={site.phoneHref}>{site.phone}</a>
+          <a href={site.portalUrl} target="_blank" rel="noopener">Client Portal</a>
+          <a href="/work-order/" class="btn btn-primary">Request Service</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <img src="/logo-mark-reversed.svg" alt="Upkeep Property Maintenance logo" class="footer-logo" width="78" height="64" />
+            <h4>{site.name}</h4>
+            <p>
+              One call for every trade. Repairs, turnovers, and seasonal
+              upkeep for property managers, landlords, and homeowners
+              across Middle Tennessee.
+            </p>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services/">All Services</a></li>
+              <li><a href="/turnovers/">Unit Turnovers</a></li>
+              <li><a href="/our-process/">Our Process</a></li>
+              <li><a href="/articles/">Articles</a></li>
+              <li><a href="/work-order/">Request Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Who We Serve</h4>
+            <ul>
+              <li><a href="/property-managers/">Property Managers</a></li>
+              <li><a href="/homeowners/">Homeowners</a></li>
+              <li><a href="/real-estate-agents/">Real Estate Agents</a></li>
+              <li><a href="/tenants/">Tenants</a></li>
+              <li><a href="/about/">About Us</a></li>
+              <li><a href="/service-area/">Service Area</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href={site.phoneHref}>{site.phone}</a></li>
+              <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+              <li>{site.address.street}<br />{site.address.city}, {site.address.state} {site.address.zip}</li>
+              <li>{site.hours}</li>
+              <li><a href={site.portalUrl} target="_blank" rel="noopener">Client Portal Login</a></li>
+              <li><a href="https://g.page/r/Ce1lTQXqFV7SEBM/review" target="_blank" rel="noopener">Review us on Google</a></li>
+              <li><a href="https://www.facebook.com/UpKeepPropertyMaintenance" rel="noopener">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+          <span><a href="/privacy/">Privacy Policy</a> · <a href="/terms/">Terms of Service</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

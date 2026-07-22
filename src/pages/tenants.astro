@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site.js';
+---
+<Layout
+  title="Tenant Maintenance Requests | Upkeep Property Maintenance"
+  description="Live in a property maintained by Upkeep? Submit a maintenance request online with photos and we will coordinate scheduling with you directly."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">For Tenants</span>
+      <h1>Something broken in your unit?</h1>
+      <p class="lede">
+        If your landlord or property manager uses Upkeep, you can submit a
+        maintenance request here. Add photos, tell us when you are available,
+        and we will handle the rest with your property manager.
+      </p>
+      <div class="hero-ctas">
+        <a href="/work-order/" class="btn btn-primary">Request Service</a>
+        <a href={site.portalUrl} target="_blank" rel="noopener" class="btn btn-ghost">Log In to Client Portal</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wrap split">
+      <div>
+        <h2>What happens after you submit</h2>
+        <ul class="checks">
+          <li>We confirm your request within two business hours</li>
+          <li>Your property manager approves the work</li>
+          <li>We schedule a time with you directly</li>
+          <li>Our tech arrives in the window, does the work, and documents it</li>
+        </ul>
+      </div>
+      <div>
+        <h2>A few tips</h2>
+        <ul class="checks">
+          <li>Photos help us bring the right parts the first time</li>
+          <li>Describe when the problem happens, not just what it is</li>
+          <li>For anything actively flooding or sparking, shut off the source if it is safe, then call us at {site.phone} and your property manager right away</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

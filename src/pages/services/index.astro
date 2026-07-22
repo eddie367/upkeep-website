@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaPanel from '../../components/CtaPanel.astro';
+import { trades } from '../../data/trades.js';
+---
+<Layout
+  title="Property Maintenance Services in Middle Tennessee | Upkeep"
+  description="HVAC, plumbing, electrical, roofing, painting, flooring, tile, cleaning, deck and fence, landscaping, windows, and general maintenance. Twelve trades under one roof for Nashville and Middle Tennessee properties."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Services</span>
+      <h1>Twelve trades. One call.</h1>
+      <p class="lede">
+        Upkeep covers every trade a property needs, so a single work order
+        handles the whole punch list. Flat-rate quotes before work begins,
+        photo documentation when it's done.
+      </p>
+    </div>
+  </section>
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="grid grid-3">
+        {trades.map((t) => (
+          <a class="card" href={`/services/${t.slug}/`}>
+            <h3>{t.name}</h3>
+            <p>{t.short}</p>
+            <span class="more">See {t.name} services →</span>
+          </a>
+        ))}
+      </div>
+      <div class="notice">
+        Turning a vacant unit? See our <a href="/turnovers/">make-ready packages</a>.
+      </div>
+    </div>
+  </section>
+  <CtaPanel />
+</Layout>

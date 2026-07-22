@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaPanel from '../../components/CtaPanel.astro';
+import StatsBand from '../../components/StatsBand.astro';
+import { trades } from '../../data/trades.js';
+import { cities } from '../../data/cities.js';
+import { site } from '../../data/site.js';
+
+export function getStaticPaths() {
+  return trades.map((t) => ({ params: { trade: t.slug }, props: { t } }));
+}
+const { t } = Astro.props;
+const others = trades.filter((x) => x.slug !== t.slug).slice(0, 3);
+// Acronyms stay uppercase mid-sentence; everything else reads lowercase.
+const inline = t.name === t.name.toUpperCase() ? t.name : t.name.toLowerCase();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: `${t.name} maintenance and repair`,
+  provider: { '@type': 'HomeAndConstructionBusiness', name: site.name, telephone: '+1-615-732-3499' },
+  areaServed: 'Middle Tennessee',
+};
+---
+<Layout
+  title={`${t.name} Services in Nashville & Middle Tennessee | Upkeep Property Maintenance`}
+  description={`${t.short} ${t.name} service for property managers, landlords, and homeowners across Nashville and Middle Tennessee.`}
+  schema={schema}
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Services / {t.name}</span>
+      <h1>{t.name} in Middle Tennessee</h1>
+      <p class="lede">{t.intro}</p>
+      <div class="hero-ctas">
+        <a href="/work-order/" class="btn btn-primary">Request {t.name} Service</a>
+        <a href={site.phoneHref} class="btn btn-ghost">Call {site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div>
+        <h2>What we handle</h2>
+        <ul class="checks">
+          {t.services.map((s) => <li>{s}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h2>Why it matters</h2>
+        <p class="lede">{t.why}</p>
+        <div class="notice">
+          {t.name} work is included in our <a href="/turnovers/">turnover packages</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <StatsBand />
+
+  <section>
+    <div class="wrap">
+      <h2>Where we do {inline} work</h2>
+      <p class="lede">
+        Serving {cities.map((c) => c.name).join(', ')}, and the surrounding
+        Middle Tennessee area.
+      </p>
+      <h2 style="margin-top: 48px;">Other trades we cover</h2>
+      <div class="grid grid-3">
+        {others.map((o) => (
+          <a class="card" href={`/services/${o.slug}/`}>
+            <h3>{o.name}</h3>
+            <p>{o.short}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel heading={`Need ${inline} help now?`} />
+</Layout>

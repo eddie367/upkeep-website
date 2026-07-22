@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site.js';
+---
+<Layout
+  title="Work Order Submitted | Upkeep Property Maintenance"
+  description="Your work order has been submitted. We will confirm it within two business hours."
+>
+  <section class="page-hero" style="padding-bottom: 96px;">
+    <div class="wrap" style="text-align: center; max-width: 640px;">
+      <span class="eyebrow">Received</span>
+      <h1>Work order submitted.</h1>
+      <p class="lede">
+        We will confirm your work order within two business hours during
+        office hours. If anything changes in the meantime, call us at
+        <a href={site.phoneHref}>{site.phone}</a>.
+      </p>
+      <div class="hero-ctas" style="justify-content: center;">
+        <a href="/work-order/" class="btn btn-ghost">Submit Another Request</a>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</Layout>

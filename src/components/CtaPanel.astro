@@ -1,0 +1,19 @@
+---
+import { site } from '../data/site.js';
+const {
+  heading = 'Ready to protect your investment?',
+  body = 'Request service online or call us. We confirm every request within two business hours.',
+} = Astro.props;
+---
+<section>
+  <div class="wrap">
+    <div class="cta-panel">
+      <h2>{heading}</h2>
+      <p>{body}</p>
+      <div class="hero-ctas" style="justify-content: center;">
+        <a href="/work-order/" class="btn btn-primary">Request Service</a>
+        <a href={site.phoneHref} class="btn btn-ghost">Call {site.phone}</a>
+      </div>
+    </div>
+  </div>
+</section>

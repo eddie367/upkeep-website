@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaPanel from '../../components/CtaPanel.astro';
+import { articles } from '../../data/articles.js';
+---
+<Layout
+  title="Property Maintenance Articles & Guides | Upkeep Property Maintenance"
+  description="Practical guides on property maintenance for Middle Tennessee owners, property managers, real estate agents, and homeowners."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Articles</span>
+      <h1>Maintenance advice from people who own rentals.</h1>
+      <p class="lede">
+        Written from what we see maintaining 350+ units across Middle
+        Tennessee, for the people who own, manage, and sell them.
+      </p>
+    </div>
+  </section>
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns: 1fr 1fr;">
+        {articles.map((a) => (
+          <a class="card" href={`/articles/${a.slug}/`}>
+            <span class="eyebrow" style="margin-bottom: 6px;">{a.audience}</span>
+            <h3>{a.title}</h3>
+            <p>{a.description}</p>
+            <span class="more">Read the article →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaPanel />
+</Layout>

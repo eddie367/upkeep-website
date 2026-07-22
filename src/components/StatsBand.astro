@@ -1,0 +1,13 @@
+---
+import { site } from '../data/site.js';
+---
+<div class="stats">
+  <div class="wrap">
+    {site.stats.map((s) => (
+      <div>
+        <div class="stat-value">{s.value}</div>
+        <div class="stat-label">{s.label}</div>
+      </div>
+    ))}
+  </div>
+</div>
