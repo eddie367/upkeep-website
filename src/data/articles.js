@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'water-heater-age-and-failure-signs',
+    title: 'How Old Is Your Water Heater? Read the Label, Then Watch for These Signs',
+    description:
+      'How to find a water heater\'s age on the rating plate, the six signs it is failing, why location changes the math, and what actually extends its life span.',
+    audience: 'Landlords, property managers, and homeowners',
+  },
+  {
     slug: 'rental-turnover-cost-nashville',
     title: 'How Much Does a Rental Turnover Cost in Nashville? (2026 Breakdown)',
     description:
