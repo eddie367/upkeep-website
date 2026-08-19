@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'rental-appliance-replacement-cost',
+    title: 'What It Costs to Replace Rental Appliances in Middle Tennessee',
+    description:
+      'Real installed price ranges for every rental appliance, the repair or replace threshold that actually holds up, and what to buy when a unit turns over.',
+    audience: 'Landlords and property managers budgeting appliance replacement in Middle Tennessee rentals',
+  },
+  {
     slug: 'water-heater-age-and-failure-signs',
     title: 'How Old Is Your Water Heater? Read the Label, Then Watch for These Signs',
     description:
