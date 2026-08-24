@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'pre-listing-repairs-worth-doing',
+    title: 'Which Repairs Are Actually Worth Doing Before You List',
+    description:
+      'The pre-listing repairs that pay: financing blockers, inspector magnets, and first impressions. Plus the expensive projects that never return what they cost.',
+    audience: 'Home sellers and listing agents',
+  },
+  {
     slug: 'rental-appliance-replacement-cost',
     title: 'What It Costs to Replace Rental Appliances in Middle Tennessee',
     description:
