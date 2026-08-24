@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'how-to-assess-roof-age-and-condition',
+    title: 'How to Tell How Old a Roof Is and What Shape It Is In',
+    description:
+      'Three ways to date a roof and a ground-level checklist for reading its condition, so you know whether you are buying five more years or a replacement.',
+    audience: 'Owners, property managers, and agents',
+  },
+  {
     slug: 'pre-listing-repairs-worth-doing',
     title: 'Which Repairs Are Actually Worth Doing Before You List',
     description:
