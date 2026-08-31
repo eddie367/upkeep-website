@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'cost-of-a-vacant-rental-day',
+    title: 'What a Vacant Day Actually Costs a Middle Tennessee Landlord',
+    description:
+      'Rent divided by 30.4 is the floor. Here is the full daily cost of a vacant rental, where turn days really go, and how to price every turnover decision.',
+    audience: 'Landlords and property managers',
+  },
+  {
     slug: 'work-order-triage-for-property-managers',
     title: 'How to Triage Maintenance Work Orders So the Right Ones Move First',
     description:
