@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'landlord-vs-tenant-repair-responsibility-tennessee',
+    title: 'Who Pays for Repairs in Tennessee, the Landlord or the Tenant?',
+    description:
+      'What Tennessee law puts on the landlord, what it puts on the tenant, and how to settle the gray items: drains, HVAC, pests, windows, and broken appliances.',
+    audience: 'Landlords, property managers, and tenants',
+  },
+  {
     slug: 'cost-of-a-vacant-rental-day',
     title: 'What a Vacant Day Actually Costs a Middle Tennessee Landlord',
     description:
