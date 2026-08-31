@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'work-order-triage-for-property-managers',
+    title: 'How to Triage Maintenance Work Orders So the Right Ones Move First',
+    description:
+      'A four tier system for sorting maintenance requests by consequence, the intake fields that make it work, and the batching rules that cut trips and cost.',
+    audience: 'Property managers and portfolio landlords',
+  },
+  {
     slug: 'how-to-assess-roof-age-and-condition',
     title: 'How to Tell How Old a Roof Is and What Shape It Is In',
     description:
