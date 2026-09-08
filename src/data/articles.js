@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'is-your-hvac-the-right-size',
+    title: 'Is Your HVAC the Right Size? What Oversizing and Undersizing Cost You',
+    description:
+      'Short cycles, sticky air, and a room that never cools are sizing symptoms. Here is how to tell what size system you have and why bigger is not better.',
+    audience: 'Homeowners, landlords, and property managers',
+  },
+  {
     slug: 'frozen-pipe-burst-cost-and-prevention-tennessee',
     title: 'What a Frozen Pipe Burst Costs, and the Fall Prep That Prevents It',
     description:
