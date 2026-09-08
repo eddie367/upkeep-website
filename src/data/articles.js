@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'frozen-pipe-burst-cost-and-prevention-tennessee',
+    title: 'What a Frozen Pipe Burst Costs, and the Fall Prep That Prevents It',
+    description:
+      'A burst pipe costs whatever the water touched, and in Middle Tennessee crawlspaces make it likely. Here is the real damage math and the prep that stops it.',
+    audience: 'Landlords, property managers, and homeowners',
+  },
+  {
     slug: 'landlord-vs-tenant-repair-responsibility-tennessee',
     title: 'Who Pays for Repairs in Tennessee, the Landlord or the Tenant?',
     description:
