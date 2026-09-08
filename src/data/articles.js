@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'what-upgrades-actually-raise-rent-middle-tennessee',
+    title: 'Which Turnover Upgrades Actually Raise Rent in Middle Tennessee',
+    description:
+      'Only a short list of upgrades moves the rent a tenant will pay. Here is that list, what pays you in leasing speed instead, and where turn money goes to die.',
+    audience: 'Landlords and property managers',
+  },
+  {
     slug: 'is-your-hvac-the-right-size',
     title: 'Is Your HVAC the Right Size? What Oversizing and Undersizing Cost You',
     description:
