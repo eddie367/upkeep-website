@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'fall-gutter-cleaning-middle-tennessee',
+    title: 'Fall Gutter Cleaning in Middle Tennessee, and What Skipping It Costs',
+    description:
+      'Clogged gutters rot fascia, back water under shingles, and soak crawlspaces. When to clear them in Middle Tennessee and what to check while you are up there.',
+    audience: 'Homeowners, landlords, and property managers in Middle Tennessee',
+  },
+  {
     slug: 'what-upgrades-actually-raise-rent-middle-tennessee',
     title: 'Which Turnover Upgrades Actually Raise Rent in Middle Tennessee',
     description:
