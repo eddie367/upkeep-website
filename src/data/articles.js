@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'exterior-painting-cost-middle-tennessee',
+    title: 'What Exterior Painting Costs in Middle Tennessee, and What Moves the Number',
+    description:
+      'What exterior house painting costs in Middle Tennessee, why quotes vary so widely, the rot repair trap, and how to compare painting bids line by line.',
+    audience: 'Homeowners, landlords, and property managers',
+  },
+  {
     slug: 'cut-vacancy-days-between-tenants',
     title: 'How to Cut Vacancy Days Between Tenants: A Turnover Timeline That Actually Works',
     description:
