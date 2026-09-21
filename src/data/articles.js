@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'cut-vacancy-days-between-tenants',
+    title: 'How to Cut Vacancy Days Between Tenants: A Turnover Timeline That Actually Works',
+    description:
+      'Most rental vacancy is scheduling, not work. The pre-move-out walkthrough, trade sequencing, and timeline that compress a unit turn by a week or more.',
+    audience: 'Landlords and property managers',
+  },
+  {
     slug: 'fall-gutter-cleaning-middle-tennessee',
     title: 'Fall Gutter Cleaning in Middle Tennessee, and What Skipping It Costs',
     description:
