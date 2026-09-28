@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'rental-maintenance-budget-how-much-to-set-aside',
+    title: 'How Much Should You Budget for Rental Maintenance?',
+    description:
+      'The 1% rule, the 50% rule, and the rest all disagree on the same house. Why that is, and the twenty minute exercise that builds a reserve on your property.',
+    audience: 'Landlords and small portfolio owners in Middle Tennessee',
+  },
+  {
     slug: 'exterior-painting-cost-middle-tennessee',
     title: 'What Exterior Painting Costs in Middle Tennessee, and What Moves the Number',
     description:
