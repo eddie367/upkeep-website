@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'repair-credit-vs-making-repairs-before-closing',
+    title: 'Repairs or a Credit? How Sellers Should Answer an Inspection Repair Request',
+    description:
+      'Should a seller make inspection repairs or offer a credit? See what lenders allow, which items to fix, which to credit, and how to answer before the deadline.',
+    audience: 'Home sellers and real estate agents',
+  },
+  {
     slug: 'rental-maintenance-budget-how-much-to-set-aside',
     title: 'How Much Should You Budget for Rental Maintenance?',
     description:
