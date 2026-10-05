@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'repairs-buyers-actually-ask-for-after-inspection',
+    title: 'The Repairs Buyers Actually Ask For After a Home Inspection',
+    description:
+      'The repair requests buyers actually send after a home inspection are predictable: safety, water, systems, and rot. What makes the list and how to respond.',
+    audience: 'Home sellers and real estate agents',
+  },
+  {
     slug: 'repair-credit-vs-making-repairs-before-closing',
     title: 'Repairs or a Credit? How Sellers Should Answer an Inspection Repair Request',
     description:
