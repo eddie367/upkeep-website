@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'ceiling-water-stain-where-is-it-coming-from',
+    title: 'Water Stain on the Ceiling: How to Tell Where It Is Coming From',
+    description:
+      'Roof, plumbing, or air conditioning? Three questions narrow a ceiling water stain down fast, plus what to do in the first hour and why drying comes first.',
+    audience: 'Homeowners, landlords, and property managers',
+  },
+  {
     slug: 'repairs-buyers-actually-ask-for-after-inspection',
     title: 'The Repairs Buyers Actually Ask For After a Home Inspection',
     description:
