@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'how-long-rental-finishes-last',
+    title: 'How Long Rental Finishes Actually Last: Paint, Flooring, Counters, and Fixtures',
+    description:
+      'Paint every three to five years, carpet three to seven, LVP ten to twenty. A rental finish lifespan list for Middle Tennessee owners, measured in turns.',
+    audience: 'Landlords and property managers in Middle Tennessee',
+  },
+  {
     slug: 'ceiling-water-stain-where-is-it-coming-from',
     title: 'Water Stain on the Ceiling: How to Tell Where It Is Coming From',
     description:
