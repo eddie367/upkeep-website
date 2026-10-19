@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'rental-bathroom-refresh-cost-middle-tennessee',
+    title: 'What It Costs to Refresh a Rental Bathroom in Middle Tennessee',
+    description:
+      'Three bathroom scopes, from cosmetic refresh to full gut, what drives each number, the line items landlords forget, and where to spend first on a budget.',
+    audience: 'Landlords and property managers',
+  },
+  {
     slug: 'how-long-rental-finishes-last',
     title: 'How Long Rental Finishes Actually Last: Paint, Flooring, Counters, and Fixtures',
     description:
