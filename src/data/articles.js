@@ -2,6 +2,20 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'high-water-bill-finding-the-leak',
+    title: 'High Water Bill? How to Find the Leak in Under an Hour',
+    description:
+      'Water bill suddenly high? Use the meter test and a toilet dye test to find the leak fast, check the usual suspects, and learn who fixes what in a rental.',
+    audience: 'Homeowners and landlords with a sudden high water bill',
+  },
+  {
+    slug: 'move-in-move-out-inspection-tennessee-rental',
+    title: 'Move In and Move Out Inspections for Tennessee Rentals: What to Document',
+    description:
+      'What a Tennessee rental move in and move out inspection should document, how to photograph it so deductions hold up, and how it becomes your turn scope.',
+    audience: 'Landlords and property managers',
+  },
+  {
     slug: 'rental-bathroom-refresh-cost-middle-tennessee',
     title: 'What It Costs to Refresh a Rental Bathroom in Middle Tennessee',
     description:
