@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'clean-repair-or-replace-rental-carpet',
+    title: 'Clean, Repair, or Replace? Deciding What to Do With Rental Carpet at Turnover',
+    description:
+      'How to decide whether rental carpet needs a cleaning, a repair, or replacement at turnover, plus pet odor, switching to hard flooring, and deposit deductions.',
+    audience: 'Landlords deciding on carpet at a turnover',
+  },
+  {
     slug: 'high-water-bill-finding-the-leak',
     title: 'High Water Bill? How to Find the Leak in Under an Hour',
     description:
