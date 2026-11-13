@@ -5,7 +5,12 @@ import { site } from '../data/site.js';
 import { articles } from '../data/articles.js';
 
 const { slug, title, description, eyebrow, faqs } = Astro.props;
-const others = articles.filter((a) => a.slug !== slug).slice(0, 3);
+// The next three articles in the list, wrapping around. The old "first three" rule sent every
+// link to the three newest and left the rest with one link from the hub (Ahrefs 11/13/26).
+const at = articles.findIndex((a) => a.slug === slug);
+const others = at === -1
+  ? articles.slice(0, 3)
+  : [1, 2, 3].map((n) => articles[(at + n) % articles.length]).filter((a) => a.slug !== slug);
 
 const articleSchema = {
   '@context': 'https://schema.org',

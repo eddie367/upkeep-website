@@ -2,10 +2,32 @@
 import Layout from '../../layouts/Layout.astro';
 import CtaPanel from '../../components/CtaPanel.astro';
 import { articles } from '../../data/articles.js';
+import { site } from '../../data/site.js';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Property Maintenance Articles & Guides',
+  url: `${site.url}/articles/`,
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: articles.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Article',
+        headline: a.title,
+        description: a.description,
+        url: `${site.url}/articles/${a.slug}/`,
+        author: { '@type': 'Organization', name: site.name, url: site.url },
+      },
+    })),
+  },
+};
 ---
 <Layout
   title="Property Maintenance Articles & Guides | Upkeep Property Maintenance"
   description="Practical guides on property maintenance for Middle Tennessee owners, property managers, real estate agents, and homeowners."
+  schema={schema}
 >
   <section class="page-hero">
     <div class="wrap">

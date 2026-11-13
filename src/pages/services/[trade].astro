@@ -5,6 +5,7 @@ import StatsBand from '../../components/StatsBand.astro';
 import { trades } from '../../data/trades.js';
 import { cities } from '../../data/cities.js';
 import { site } from '../../data/site.js';
+import { business } from '../../data/seo.js';
 
 export function getStaticPaths() {
   return trades.map((t) => ({ params: { trade: t.slug }, props: { t } }));
@@ -17,7 +18,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   serviceType: `${t.name} maintenance and repair`,
-  provider: { '@type': 'HomeAndConstructionBusiness', name: site.name, telephone: '+1-615-732-3499' },
+  provider: business,   // full record with address: a provider with no address fails Google's check
   areaServed: 'Middle Tennessee',
 };
 ---

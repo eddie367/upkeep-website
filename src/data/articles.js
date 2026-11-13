@@ -229,7 +229,7 @@ export const articles = [
     slug: 'outsourcing-property-maintenance',
     title: 'Why Property Managers Outsource Maintenance (and What It Actually Saves)',
     description:
-      'In-house techs, contractor rosters, or one maintenance partner: the real costs of each model and why outsourced maintenance usually wins for growing portfolios.',
+      'In-house techs, contractor rosters, or one maintenance partner: the real costs of each model and why outsourcing usually wins for growing portfolios.',
     audience: 'Property managers',
   },
 ];

@@ -30,6 +30,8 @@ export default defineConfig({
   site: 'https://www.upkeeppropertymaintenance.com',
   integrations: [
     sitemap({
+      // the form's thank-you page is noindex and has no reason to be in the sitemap
+      filter: (page) => !page.includes('/thank-you/'),
       serialize(item) {
         const lastmod = lastmodFor(item.url);
         if (lastmod) item.lastmod = lastmod;
