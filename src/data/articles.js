@@ -2,6 +2,13 @@
 // itself; this list drives the hub page, footer, and cross-linking.
 export const articles = [
   {
+    slug: 'repaint-or-touch-up-between-tenants',
+    title: 'Repaint or Touch Up Between Tenants? How to Decide',
+    description:
+      'When a touch up is enough at a rental turnover, when a full repaint is the better call, and the whole wall approach that often gives the best result.',
+    audience: 'Landlords and property managers preparing a turnover',
+  },
+  {
     slug: 'clean-repair-or-replace-rental-carpet',
     title: 'Clean, Repair, or Replace? Deciding What to Do With Rental Carpet at Turnover',
     description:
