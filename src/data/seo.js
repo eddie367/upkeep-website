@@ -36,8 +36,11 @@ export function metaDesc(description) {
 }
 
 // One complete business record, used on every page and as the provider on service pages.
+// Both labels on purpose: HomeAndConstructionBusiness is the accurate one, and the
+// plain Organization label is what Ahrefs' AI Discoverability check looks for by name
+// (it ignored the sameAs link when only the specific label was present).
 export const business = {
-  '@type': 'HomeAndConstructionBusiness',
+  '@type': ['Organization', 'HomeAndConstructionBusiness'],
   '@id': `${site.url}/#business`,
   name: site.name,
   url: `${site.url}/`,
